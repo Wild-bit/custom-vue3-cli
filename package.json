@@ -1,0 +1,11 @@
+{
+  "name": "custom-vue-cli",
+  "version": "1.0.0",
+  "description": "简单模拟vue-cli脚手架模板，学习其基本原理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lzh",
+  "license": "ISC"
+}
