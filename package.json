@@ -3,25 +3,36 @@
   "version": "1.0.0",
   "description": "简单模拟vue-cli脚手架模板，学习其基本原理",
   "main": "index.js",
+  "bin": "dist/index.js",
   "scripts": {
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "build:w":"rollup -c -w"
   },
   "author": "lzh",
   "license": "ISC",
   "dependencies": {
+    "@types/inquirer": "^9.0.7",
     "chalk": "^5.3.0",
     "commander": "^12.0.0",
+    "dist": "link:E:/code/custom-vue-cli/dist",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^11.2.0",
     "inquirer": "^9.2.15",
     "log-symbols": "^6.0.0",
     "ora": "^8.0.1",
-    "pnpm": "^8.15.3"
+    "pnpm": "^8.15.3",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-typescript": "^7.23.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^20.11.19",
+    "@types/shelljs": "^0.8.15",
     "rollup": "^4.12.0",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.3.3"
   }
