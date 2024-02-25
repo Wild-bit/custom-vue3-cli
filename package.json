@@ -2,32 +2,34 @@
   "name": "custom-vue-cli",
   "version": "1.0.0",
   "description": "简单模拟vue-cli脚手架模板，学习其基本原理",
-  "main": "index.js",
-  "bin": "dist/index.js",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "bin": "dist/index.cjs",
   "scripts": {
-    "build": "rollup --config",
-    "build:w":"rollup -c -w"
+    "build": "rollup --config --cache",
+    "build:w": "rollup -c -w"
   },
   "author": "lzh",
   "license": "ISC",
   "dependencies": {
     "@types/inquirer": "^9.0.7",
-    "chalk": "^5.3.0",
+    "chalk": "4.1.1",
     "commander": "^12.0.0",
     "dist": "link:E:/code/custom-vue-cli/dist",
-    "download-git-repo": "^3.0.2",
     "fs-extra": "^11.2.0",
-    "inquirer": "^9.2.15",
+    "inquirer": "8.2.5",
     "log-symbols": "^6.0.0",
-    "ora": "^8.0.1",
     "pnpm": "^8.15.3",
-    "shelljs": "^0.8.5"
+    "shelljs": "^0.8.5",
+    "simple-git": "^3.22.0",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-typescript": "^7.23.3",
     "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^20.11.19",
     "@types/shelljs": "^0.8.15",

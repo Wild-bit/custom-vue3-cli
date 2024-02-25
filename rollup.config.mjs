@@ -3,23 +3,28 @@ import typescript from "rollup-plugin-typescript2";
 import resolve from "@rollup/plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 
 export default {
   input: "src/cli.ts",
   output: {
-    file: "dist/index.js",
+    file: "dist/index.cjs",
     format: "cjs",
   },
   plugins: [
+    json(),
     commonjs({
       include: "node_modules/**",
     }),
-    resolve(),
+    resolve({
+      browser: false,
+      preferBuiltins: true,
+    }),
     typescript({
       tsconfig: "tsconfig.json",
     }),
     babel({
-      extensions: [".ts", ".tsx", ".js", ".jsx"],
+      extensions: [".ts", ".js"],
       include: ["src/**/*"],
     }),
   ],
