@@ -1,5 +1,5 @@
 export default {
-  templateGitRemoteLink: "https://github.com/Wild-bit/vue3-template.git",
+  templateGitRemoteLink: "https://github.com/Wild-bit/webpack5-vue3-ts.git",
   npmRemoteLink: "https://registry.npmjs.org/",
   prompt: [
     {

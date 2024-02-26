@@ -19,6 +19,7 @@
     "fs-extra": "^11.2.0",
     "inquirer": "8.2.5",
     "log-symbols": "^6.0.0",
+    "ora": "5.4.1",
     "pnpm": "^8.15.3",
     "shelljs": "^0.8.5",
     "simple-git": "^3.22.0",

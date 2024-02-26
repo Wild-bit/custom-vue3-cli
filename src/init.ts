@@ -2,6 +2,7 @@
 import shell from "shelljs";
 import log from "log-symbols";
 import fs from "fs";
+import ora from "ora";
 import { red } from "chalk";
 import inquirer from "inquirer";
 import path from "path";
@@ -28,6 +29,8 @@ async function initAction(name: string) {
     const answer = await inquirer.prompt(prompt);
     await clone(config.templateGitRemoteLink, name);
     generatePackageJson(name, answer);
+    // 自动安装依赖
+    // const installSpinner = ora("正在安装依赖…").start();
     console.log(answer);
     console.log(path.resolve(__dirname, `../../${name}`));
   } catch (error) {
@@ -49,14 +52,9 @@ function generatePackageJson(projectName: string, answer: any) {
   const projectPath = getProjectPath(`${projectName}/package.json`);
   const packageJsonMock: any = {
     name: "",
-    version: "1.0.0",
     description: "",
-    main: "index.js",
-    scripts: {},
     author: "",
     keywords: "",
-    dependencies: {},
-    devDependencies: {},
   };
   Object.keys(answer).forEach((key) => {
     packageJsonMock[key] = answer[key];
