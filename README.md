@@ -1,22 +1,24 @@
 ## 简单模拟vue-cli脚手架模板
 
 ## 项目目录
-- CUSTOM-VUE-CLI
-  - dist
-    - index.cjs 
-  - src
-    - cli.ts
-    - clone.ts
-    - config.ts
-    - init.ts 
-  - .gitignore
-  - babel.config.js
-  - package-lock.json
-  - package.json
-  - pnpm-lck.yaml
-  - REAMDE.md
-  - rollup.config.mjs
-  - tsconfig.json
+```
+├─dist
+|  └index.cjs
+├─src
+|  ├─cli.ts
+|  ├─clone.ts
+|  ├─config.ts
+|  └init.ts
+├─.gitignore
+├─babel.config.js
+├─package-lock.json
+├─package.json
+├─pnpm-lock.yaml
+├─README.md
+├─result.txt
+├─rollup.config.mjs
+├─tsconfig.json
+```
 
 ## 第三方依赖介绍
 - chalk 终端字体颜色
