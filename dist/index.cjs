@@ -45704,6 +45704,7 @@ function initAction(name) {
     }
     console.log(config.templateGitRemoteLink);
     try {
+      // console.log(getProjectPath(name));
       const prompt = generatePrompt(name);
       const answer = yield inquirer.prompt(prompt);
       const cloneSpinner = ora("正在克隆项目...").start();
@@ -45712,9 +45713,12 @@ function initAction(name) {
       generatePackageJson(name, answer);
       console.log(logSymbols$2.success, chalk$4.green("写入package.json"));
       // 自动安装依赖
-      // const installSpinner = ora("正在安装依赖…").start();
+      const installSpinner = ora("正在安装依赖…").start();
+      installDepended(name);
+      installSpinner.succeed(chalk$4.green("依赖安装完成"));
+      installSpinner.succeed(chalk$4.green("项目创建完成"));
       console.log(answer);
-      console.log(path.resolve(__dirname, "../../".concat(name)));
+      shell.exit(1);
     } catch (error) {
       console.log(logSymbols$2.error, source.red(error));
     }
@@ -45742,6 +45746,13 @@ function generatePackageJson(projectName, answer) {
 }
 function getProjectPath(projectName) {
   return path.resolve(__dirname, "../../".concat(projectName));
+}
+function installDepended(projectName) {
+  const projectPath = getProjectPath(projectName);
+  if (shell.exec("cd ".concat(projectPath, " && npm install -D")).code !== 0) {
+    console.log(logSymbols$2.error, chalk$4.red("自动安装依赖失败，请手动安装"));
+    shell.exit(1);
+  }
 }
 function isValidKey(key, obj) {
   return key in obj;
